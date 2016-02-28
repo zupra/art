@@ -24,6 +24,12 @@ body
 .section
   min-height 100vh !important //100%
 
+
+
+
+
+
+
 .Imgs
   //background #000
   text-align center
@@ -34,6 +40,20 @@ body
     max-height: 90%
     width auto
     margin auto
+
+  .videoWrapper
+    //width 50%
+    //max-width 800px
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    iframe
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
 
 
 .intro
@@ -55,67 +75,90 @@ body
     width 80%
     max-width: 600px
     margin auto
-.wrap
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index -1
 
-@keyframes rotate360 {
-  0% {
-    transform: rotate( 0deg ) scale( 1 );
-  }
 
-  100% {
-    transform: rotate( 360deg ) scale( 1.5 );
-  }
-}
+#map_canvas
+  height 100%
+#Gmap
 
-@keyframes rotate180 {
-  0% {
-    transform: rotate( 0deg ) scale( 1.25 );
-  }
+  position relative
 
-  100% {
-    transform: rotate( 180deg ) skewX( 1 );
-  }
-}
-@keyframes rotate90 {
-  0% {
-    transform: rotate( 0deg ) scale( 1 );
-  }
+  #zoom-in,
+  #zoom-out
+    height: 38px;
+    width: 38px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 16px;
+    margin-top: 16px;
+    background: url("//s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-controller.svg") no-repeat #3f51b5;
+    &:hover
+      background-color: #e91e63;
 
-  100% {
-    transform: rotate( 90deg ) scale( 1.5 );
-  }
-}
 
-polygon {
-  fill: white;
-  opacity: 0.05;
-  transform-origin: center center;
-  backface-visibility: hidden;
-  animation: rotate360 30s linear infinite alternate-reverse;
 
-  &:nth-child(2n) {
-    animation-name: rotate180;
-    animation-duration: 15s;
-    animation-direction: alternate;
-  }
-
-  &:nth-child(3n) {
-    animation-name: rotate90;
-    animation-duration: 10s;
-  }
-
-  &:nth-child(5n) {
-    animation-duration: 30s;
-    animation-direction: alternate-reverse;
-  }
-}
-
+//
+// .wrap
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   z-index -1
+//
+// @keyframes rotate360 {
+//   0% {
+//     transform: rotate( 0deg ) scale( 1 );
+//   }
+//
+//   100% {
+//     transform: rotate( 360deg ) scale( 1.5 );
+//   }
+// }
+//
+// @keyframes rotate180 {
+//   0% {
+//     transform: rotate( 0deg ) scale( 1.25 );
+//   }
+//
+//   100% {
+//     transform: rotate( 180deg ) skewX( 1 );
+//   }
+// }
+// @keyframes rotate90 {
+//   0% {
+//     transform: rotate( 0deg ) scale( 1 );
+//   }
+//
+//   100% {
+//     transform: rotate( 90deg ) scale( 1.5 );
+//   }
+// }
+//
+// polygon {
+//   fill: white;
+//   opacity: 0.05;
+//   transform-origin: center center;
+//   backface-visibility: hidden;
+//   animation: rotate360 30s linear infinite alternate-reverse;
+//
+//   &:nth-child(2n) {
+//     animation-name: rotate180;
+//     animation-duration: 15s;
+//     animation-direction: alternate;
+//   }
+//
+//   &:nth-child(3n) {
+//     animation-name: rotate90;
+//     animation-duration: 10s;
+//   }
+//
+//   &:nth-child(5n) {
+//     animation-duration: 30s;
+//     animation-direction: alternate-reverse;
+//   }
+// }
+//
 
 
 
