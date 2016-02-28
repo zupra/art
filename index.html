@@ -17,9 +17,9 @@
 
 
 
-    <div class="wrap">
+    <!-- <div class="wrap">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 1024" preserveAspectRatio="meet"><polygon points="163 0 0 0 0 88.61 34 121 163 0"/><polygon points="154 116 163 0 34 121 154 116"/><polygon points="413.05 0 163 0 348 67 413.05 0"/><polygon points="348 67 448 102 448 0 413.05 0 348 67"/><polygon points="312 231 448 210 448 102 348 67 312 231"/><polygon points="348 67 163 0 154 116 348 67"/><polygon points="312 231 348 67 154 116 312 231"/><polygon points="154 116 34 121 45.77 233.64 154 116"/><polygon points="48 231 312 231 154 116 48 231"/><polygon points="0 88.61 0 160 34 121 0 88.61"/><polygon points="34 121 0 157.86 0 330.37 62 389 34 121"/><polygon points="62 389 312 231 45.49 231 62 389"/><polygon points="201.18 411.36 312 231 209.23 295.95 201.18 411.36"/><polygon points="201.67 407.94 448 412 312 231 201.67 407.94"/><polygon points="448 412 448 210 312 231 448 412"/><polygon points="197 525 448 412 201.67 407.94 197 525"/><polygon points="62 389 197 525 209.23 295.95 62 389"/><polygon points="0 330.37 0 411.36 62 389 0 330.37"/><polygon points="27 605 197 525 62 389 27 605"/><polygon points="62 389 0 410.48 0 570.13 27 605 62 389"/><polygon points="122 786 197 525 27 605 122 786"/><polygon points="306.26 696.61 391 655.5 197 525 122 786 306.26 696.61"/><polygon points="391 655.5 448 412 197 525 391 655.5"/><polygon points="448 655.5 448 412 391 655.5 448 655.5"/><polygon points="448 837 448 655.5 391 655.5 448 837"/><polygon points="306.26 696.61 279 938 448 837 306.26 696.61"/><polygon points="306.26 696.61 448 837 391 655.5 306.26 696.61"/><polygon points="279 938 306.26 696.61 122 786 279 938"/><polygon points="122 786 0 740.91 0 861.44 16.25 913 122 786"/><polygon points="27 605 0 624.2 0 740.91 122 786 27 605"/><polygon points="0 570.13 0 624.2 27 605 0 570.13"/><polygon points="16.25 913 279 938 122 786 16.25 913"/><polygon points="0 952.43 0 1024 166 1024 16.25 913 0 952.43"/><polygon points="0 861.44 0 952.43 16.25 913 0 861.44"/><polygon points="16.25 913 162.7 1024 214.13 1024 279 938 16.25 913"/><polygon points="214.13 1024 448 1024 279 938 214.13 1024"/><polygon points="448 1024 448 837 279 938 448 1024"/></svg>
-    </div>
+    </div> -->
 
 
 
@@ -82,6 +82,7 @@
   </div>
 
 
+
   <div class="section" id="screen">
   	<div id="cube" class='cube'>
 
@@ -107,7 +108,11 @@
 
   <div class="section">
     <div id="Gmap">
-      <div id="map_canvas"></div>
+      <div id="zoom-in"></div>
+      <div id="zoom-out"></div>
+      <div id="map_canvas">
+
+      </div>
     </div>
   </div>
 
@@ -132,58 +137,32 @@
 <script src="//maps.google.com/maps/api/js?sensor=false"></script>
 
 
- <script>
-
- $(document).ready(function() {
-
-
-
-    //http://alvarotrigo.com/fullPage/examples/apple.html
-
-
-    //var totalSlides = $('#fullpage .section').length;
-
-
-
-    $('#fullpage').fullpage({
-
-      //anchors:[ 's1', 's2', 's3', 's4', 's5' ],
-      //menu: '#menu',
-      //navigation: true,
-
-
-      //continuousVertical: true,
-      //normalScrollElementTouchThreshold: 5,
-
-
-      //scrollOverflow: true, //если контент выходит за границы
-      //navigation: true, //кнопки по секциям
-      //navigationTooltips //массив всплывающих подсказок
-
-      //Design
-      //verticalCentered: true,
-      //resize : false,
-
-
-    });
-
-
-
- });
- </script>
-
 
 
 
 <script>
+$(function() {
+
+  //http://alvarotrigo.com/fullPage/examples/apple.html
+  $('#fullpage').fullpage({
+    //continuousVertical: true,
+    //scrollOverflow: true, //если контент выходит за границы
+    //navigation: true, //кнопки по секциям
+    //navigationTooltips //массив всплывающих подсказок
+
+    //Design
+    //verticalCentered: true,
+    //resize : false,
+  });
+
 
   // map
   var _draggable = ($(window).width() > 800) ? true : false;
 
 
-  var latitude = 55.7348971, //55.804693,
-      longitude = 37.5884822; //37.591822;
-  var map_zoom = 15; //17
+  var latitude = 55.82431//55.7348971, //55.804693,
+      longitude = 37.63453,12 //37.5884822; //37.591822;
+  var map_zoom = 17; //17
   var marker_url = './build/img/map.png';
   var style = [{
       "featureType": "poi",
@@ -265,7 +244,6 @@
   map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
 });
 </script>
-
 
 
 <script>
